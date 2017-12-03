@@ -1,10 +1,10 @@
-object Form3: TForm3
-  Left = 192
-  Top = 152
+object Form13: TForm13
+  Left = 505
+  Top = 290
   Width = 928
   Height = 480
-  Caption = 'Form3'
-  Color = clBtnFace
+  Caption = 'Form13'
+  Color = clBackground
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -14,50 +14,63 @@ object Form3: TForm3
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
-  object pnl1: TPanel
+  object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 889
-    Height = 81
-    Caption = 'pnl1'
+    Width = 921
+    Height = 65
     TabOrder = 0
-    object btn1: TButton
+    object Button1: TButton
       Left = 24
-      Top = 32
-      Width = 75
+      Top = 24
+      Width = 97
       Height = 25
       Caption = 'Simpan ke PDF'
       TabOrder = 0
-      OnClick = btn1Click
+      OnClick = Button1Click
     end
   end
-  object pnl2: TPanel
+  object Panel2: TPanel
     Left = 0
-    Top = 80
-    Width = 889
-    Height = 305
-    Caption = 'pnl2'
+    Top = 64
+    Width = 273
+    Height = 361
+    Color = clWhite
     TabOrder = 1
-    object frxprvw1: TfrxPreview
-      Left = 32
-      Top = 32
-      Width = 841
-      Height = 249
+    object frxPreview1: TfrxPreview
+      Left = 128
+      Top = 0
+      Width = 156
+      Height = 361
       OutlineVisible = True
       OutlineWidth = 121
       ThumbnailVisible = False
       UseReportHints = True
     end
   end
-  object frxdbdtst1: TfrxDBDataset
-    UserName = 'frxDBDataset1'
-    CloseDataSource = False
-    DataSet = Form2.vrtltbl1
-    BCDToCurrency = False
-    Left = 663
+  object frxPDFExport1: TfrxPDFExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    PrintOptimized = False
+    Outline = False
+    Background = False
+    HTMLTags = True
+    Author = 'FastReport'
+    Subject = 'FastReport PDF export'
+    Creator = 'FastReport (http://www.fast-report.com)'
+    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
+    HideToolbar = False
+    HideMenubar = False
+    HideWindowUI = False
+    FitWindow = False
+    CenterWindow = False
+    PrintScaling = False
+    Left = 688
     Top = 24
   end
-  object frxrprt1: TfrxReport
+  object frxReport1: TfrxReport
     Version = '4.12.6'
     DotMatrixReport = False
     IniFile = '\Software\Fast Reports'
@@ -65,20 +78,19 @@ object Form3: TForm3
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 43045.049033981480000000
-    ReportOptions.LastChange = 43045.050704814810000000
+    ReportOptions.CreateDate = 42946.177338784720000000
+    ReportOptions.LastChange = 42946.184108599540000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
-      ''
       'begin'
       ''
       'end.')
-    OnBeforePrint = frxrprt1BeforePrint
-    Left = 791
+    OnBeforePrint = frxReport1BeforePrint
+    Left = 752
     Top = 24
     Datasets = <
       item
-        DataSet = frxdbdtst1
+        DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
       end>
     Variables = <>
@@ -211,12 +223,30 @@ object Form3: TForm3
         Height = 18.897650000000000000
         Top = 151.181200000000000000
         Width = 740.787880000000000000
-        DataSet = frxdbdtst1
+        DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
+        object Memo4: TfrxMemoView
+          Width = 151.000000000000000000
+          Height = 18.897650000000000000
+          ShowHint = False
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          DisplayFormat.DecimalSeparator = '.'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8 = (
+            '')
+          ParentFont = False
+          Style = 'Data'
+        end
         object Picture1: TfrxPictureView
-          Align = baClient
-          Width = 740.787880000000000000
+          Align = baCenter
+          Left = 323.149815000000000000
+          Width = 94.488250000000000000
           Height = 18.897650000000000000
           ShowHint = False
           HightQuality = False
@@ -257,25 +287,12 @@ object Form3: TForm3
       end
     end
   end
-  object frxpdfxprt1: TfrxPDFExport
-    UseFileCache = True
-    ShowProgress = True
-    OverwritePrompt = False
-    DataOnly = False
-    PrintOptimized = False
-    Outline = False
-    Background = False
-    HTMLTags = True
-    Author = 'FastReport'
-    Subject = 'FastReport PDF export'
-    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
-    HideToolbar = False
-    HideMenubar = False
-    HideWindowUI = False
-    FitWindow = False
-    CenterWindow = False
-    PrintScaling = False
-    Left = 727
+  object frxDBDataset1: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    DataSet = Form12.VirtualTable1
+    BCDToCurrency = False
+    Left = 816
     Top = 24
   end
 end
