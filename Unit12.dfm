@@ -1,9 +1,9 @@
-object Form2: TForm2
-  Left = 205
-  Top = 196
+object Form12: TForm12
+  Left = 429
+  Top = 171
   Width = 928
   Height = 480
-  Caption = 'Form2'
+  Caption = 'Form12'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,19 +13,19 @@ object Form2: TForm2
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object pnl1: TPanel
+  object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 361
+    Width = 417
     Height = 441
-    Caption = 'pnl1'
+    Caption = 'Panel1'
     TabOrder = 0
-    object dbgrd1: TDBGrid
-      Left = 16
-      Top = 21
-      Width = 320
-      Height = 120
-      DataSource = ds1
+    object DBGrid1: TDBGrid
+      Left = 8
+      Top = 0
+      Width = 409
+      Height = 129
+      DataSource = DataSource1
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
@@ -33,50 +33,68 @@ object Form2: TForm2
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
     end
-    object btn1: TButton
-      Left = 40
+    object Button1: TButton
+      Left = 64
       Top = 176
       Width = 75
       Height = 25
       Caption = 'Pilih'
       TabOrder = 1
-      OnClick = btn1Click
+      OnClick = Button1Click
     end
-    object btn2: TButton
-      Left = 144
+    object Button2: TButton
+      Left = 176
       Top = 176
       Width = 75
       Height = 25
       Caption = 'Scan'
       TabOrder = 2
-      OnClick = btn2Click
+      OnClick = Button2Click
     end
-    object btn3: TButton
-      Left = 256
+    object Button3: TButton
+      Left = 288
       Top = 176
       Width = 75
       Height = 25
       Caption = 'Hapus'
       TabOrder = 3
-      OnClick = btn3Click
+      OnClick = Button3Click
     end
   end
-  object pnl2: TPanel
-    Left = 360
-    Top = 0
-    Width = 377
-    Height = 441
-    Caption = 'pnl2'
+  object Panel2: TPanel
+    Left = 416
+    Top = 8
+    Width = 497
+    Height = 433
+    Caption = 'Panel2'
     TabOrder = 1
-    object img1: TImage
-      Left = 16
-      Top = 16
-      Width = 337
-      Height = 361
+    object Image1: TImage
+      Left = 0
+      Top = 0
+      Width = 473
+      Height = 409
     end
   end
-  object dlphtwn1: TDelphiTwain
-    OnTwainAcquire = dlphtwn1TwainAcquire
+  object DataSource1: TDataSource
+    DataSet = VirtualTable1
+    Left = 456
+    Top = 16
+  end
+  object VirtualTable1: TVirtualTable
+    Options = [voPersistentData, voStored, voSkipUnSupportedFieldTypes]
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'Image'
+        DataType = ftString
+        Size = 20
+      end>
+    Left = 528
+    Top = 16
+    Data = {030001000500496D6167650100140000000000000000000000}
+  end
+  object DelphiTwain1: TDelphiTwain
+    OnTwainAcquire = DelphiTwain1TwainAcquire
     TransferMode = ttmMemory
     SourceCount = 0
     Info.MajorVersion = 1
@@ -90,25 +108,7 @@ object Form2: TForm2
     Info.ProductName = 'App product name'
     LibraryLoaded = False
     SourceManagerLoaded = False
-    Left = 536
-    Top = 32
-  end
-  object ds1: TDataSource
-    DataSet = vrtltbl1
-    Left = 392
-    Top = 24
-  end
-  object vrtltbl1: TVirtualTable
-    Options = [voPersistentData, voStored, voSkipUnSupportedFieldTypes]
-    Active = True
-    FieldDefs = <
-      item
-        Name = 'Image'
-        DataType = ftString
-        Size = 20
-      end>
-    Left = 456
-    Top = 24
-    Data = {030001000500496D6167650100140000000000000000000000}
+    Left = 600
+    Top = 16
   end
 end
